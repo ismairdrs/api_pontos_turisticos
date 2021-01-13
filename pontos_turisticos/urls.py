@@ -8,12 +8,11 @@ from apps.core.api.viewsets import PontoTuristicoViewSet
 from apps.enderecos.api.viewsets import EnderecoViewSet
 
 router = routers.DefaultRouter()
-router.register('ponto_turistico', PontoTuristicoViewSet)
-router.register('atracoes', AtracaoViewSet)
-router.register('avaliacoes', AvaliacaoViewSet)
-router.register('comentario', ComentarioViewSet)
-router.register('ponto_turistico', PontoTuristicoViewSet)
-router.register('endereco', EnderecoViewSet)
+router.register('ponto_turisticos', PontoTuristicoViewSet, basename='PontoTuristico')
+router.register('atracoes', AtracaoViewSet, basename='Atracao')
+router.register('avaliacoes', AvaliacaoViewSet, basename='Avaliacao')
+router.register('comentarios', ComentarioViewSet, basename='Comentario')
+router.register('enderecos', EnderecoViewSet, basename='Endereco')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
